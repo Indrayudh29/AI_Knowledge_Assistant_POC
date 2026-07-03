@@ -1,25 +1,25 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class SearchResult(BaseModel):
     """
-    Represents a semantic search result.
+    Represents a semantic search result returned from the vector database.
     """
 
     chunk_id: str
 
     source_document: str
 
-    page_number: int
-
     similarity_score: float
 
     text: str
+
+    metadata: dict[str, str | int | float | bool] = Field(default_factory=dict)
 
     def __str__(self):
         return (
             f"SearchResult("
             f"score={self.similarity_score:.4f}, "
-            f"page={self.page_number}"
+            f"document='{self.source_document}'"
             f")"
         )

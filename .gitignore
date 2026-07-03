@@ -27,3 +27,15 @@ knowledge/metadata/
 .ipynb_checkpoints/
 
 Docs/
+
+# Generated pipeline outputs
+knowledge/processed_text/*
+knowledge/chunks/*
+logs/*
+chroma_db/*
+
+# Keep folder structure
+!knowledge/processed_text/.gitkeep
+!knowledge/chunks/.gitkeep
+!logs/.gitkeep
+!chroma_db/.gitkeep
