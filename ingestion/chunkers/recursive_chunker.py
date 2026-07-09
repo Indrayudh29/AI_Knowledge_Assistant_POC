@@ -100,9 +100,9 @@ class RecursiveChunker:
             chunk_id = f"{document_name}_{index:04d}"
 
             metadata = {
-                "source": document.file_name,
+               "source_document": document.file_name,
                 "chunk_index": index,
-                "characters": len(text)
+                "character_count": len(text)
             }
 
             chunk = Chunk(
